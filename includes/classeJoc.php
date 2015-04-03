@@ -36,7 +36,14 @@ class joc{
                         header("Location: adminreg.php");
 
                }
-               else{
+               
+			   
+           }
+    }
+}
+
+function crearTaulaJoc(){
+	
                $sql = "CREATE TABLE jocs(
                    id INT(10) NOT NULL auto_increment,
                    nom VARCHAR(100) NOT NULL,
@@ -51,11 +58,6 @@ class joc{
                $tb = mysql_query($sql);
                                   
                }
-                   
-           }
-    }
-}
-
             /*}
 }
 else{
