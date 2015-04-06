@@ -43,7 +43,7 @@ if(isset($_POST["reg"]))
 			}
 		 case 4: 
 		 $miconexion = new BaseDeDades;
-			$miconexion -> consulta("Insert into usuaris (email, pass, authid) values ('".$email."' , '".md5($pass)."', '".substr(md5(microtime()),1,12)."' ");
+			$miconexion -> consulta("Insert into usuaris (email, pass, authid) values ('".$email."' , '".md5($pass)."', '".substr(md5(microtime()),1,12)."') ");
 			$miconexion -> tanca();
 	};
 	//fer login

@@ -1,3 +1,5 @@
+	
+	<h2 class="tituloCat">ÚLTIMOS JUEGOS AÑADIDOS</h2>
 	<?php
 					$jocs = new BaseDeDades;
 					$jocs -> consulta("SELECT * FROM jocs order by id DESC");

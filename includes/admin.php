@@ -35,6 +35,9 @@
 					
 				?> 
         </li>
+        <li>
+        <!--<?php include("includes/registro.php"); ?>-->
+        </li>
       </ul>
     </nav>
   </div>

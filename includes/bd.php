@@ -8,7 +8,7 @@ var $Clau;
 var $Conexio_ID = 0;
 var $Consulta_ID = 0;
 
-function BaseDeDades($bd = "gamingtorrents", $host = "localhost", $user = "root", $pass = "") 
+function BaseDeDades($bd = "gamingtorrents", $host = "localhost", $user = "adminGamer", $pass = "123123") 
 {
 $this->BaseDeDades = $bd;
 $this->Servidor = $host;
@@ -22,6 +22,10 @@ function consulta($sql = "")
 {
 $this->Consulta_ID = @mysqli_query( $this->Conexio_ID , $sql);
 return $this->Consulta_ID;
+}
+function error()
+{
+return mysqli_error($this->Conexio_ID);
 }
 
 function numrows()

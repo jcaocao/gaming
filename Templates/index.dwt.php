@@ -43,24 +43,32 @@
 
 
  <?php include("includes/admin.php"); ?>
+ 
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="row clearfix">
-				<div class="col-md-2 column menuFijo">
-                <?php include("includes/logo.php"); ?>
+            	<div id="wrapper">
                 <?php include("includes/izquierdo.php"); ?>
-				</div>
-				<div class="col-md-8 column medio">
-                <?php include("paginas/".$centre.".php"); ?>
-				</div>
-				<div class="col-md-2 column derecho">
-                <?php include("includes/registro.php"); ?>
-                <?php include("includes/derecho.php"); ?>
-				</div>
+                    <div id="page-content-wrapper">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <?php include("paginas/".$centre.".php"); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
 </div>
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 </body>
 </html>
