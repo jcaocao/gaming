@@ -3,29 +3,29 @@
  
  
  if(empty($_POST["addJoc"])){
-		 echo'<h1>AÑADIR UN JUEGO NUEVO</h1>
+		 echo'<div class="pad10"><h1>AÑADIR UN JUEGO NUEVO</h1>
 		 <form class="form-horizontal"  method="post" action="index.php?centre=addJoc">
 		  <div class="form-group">
 			<label for="nomJoc" class="col-sm-2 control-label">Nombre</label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 			  <input type="text" class="form-control" id="nomJoc" name="nomJoc" >
 			</div>
 		  </div>
 		  <div class="form-group">
 			<label for="descripcio" class="col-sm-2 control-label">Descripcion</label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 			  <textarea class="form-control" id="descripcio" name="descripcio" rows="3"></textarea>
 			</div>
 		  </div>
 		  <div class="form-group">
 			<label for="desarrollador" class="col-sm-2 control-label">Desarrollador</label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 			  <input type="text" class="form-control" id="desarrollador" name="desarrollador" >
 			</div>
 		  </div>
 		  <div class="form-group ">
 		   <label class="col-sm-2 control-label">Genero</label>
-		   <div class="col-sm-10">
+		   <div class="col-sm-9">
 			<select id="selectGenere" class="form-control" name="selectGenere">
 			<option value="" >--Selecciona Genere--</option>
 			';
@@ -43,23 +43,29 @@
 		  </div>
 		  <div class="form-group">
 			<label for="fecha" class="col-sm-2 control-label">Fecha lanzamiento</label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 			  <input type="text" class="form-control" id="fecha" name="fecha">
 			</div>
 		  </div>
 		   <div class="form-group">
 			<label for="foto" class="col-sm-2 control-label">Portada</label>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 			<input type="file" id="foto" name="foto">
 			  </div>
 		  </div>
 		  <div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
+			<label for="video" class="col-sm-2 control-label">Video</label>
+			<div class="col-sm-9">
+			<input type="text" class="form-control" id="video" name="video">
+			  </div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-9">
 			  <button type="submit" class="btn btn-default">Añadir</button>
 			</div>
 		  </div>
 		  <input type="hidden" name="addJoc" value="true">
-		</form> ';
+		</form></div> ';
 	}else{
 	
 	$nomJoc = trim($_POST["nomJoc"]);
@@ -68,10 +74,11 @@
 	$genere = $_POST["selectGenere"];
 	$fecha = $_POST["fecha"];
 	$foto = $_POST["foto"];
+	$video = $_POST["video"];
 	
-	switch($nomJoc & $desc & $desarrollador & $genere & $fecha & $foto)
+	switch($nomJoc & $desc & $desarrollador & $genere & $fecha & $foto & $video)
 	{
-		case 0: if(!isset($nomJoc)||!isset($desc)||!isset($desarrollador)||!isset($genere)||!isset($fecha)||!isset($foto))
+		case 0: if(!isset($nomJoc)||!isset($desc)||!isset($desarrollador)||!isset($genere)||!isset($fecha)||!isset($foto)||!isset($video))
 		{
 			echo "Hi ha un camp que no has introduit <br>";
 			 break;
@@ -92,7 +99,7 @@
 		}
 		 case 3: {
 		 $miconexion = new BaseDeDades;
-			$miconexion -> consulta("INSERT INTO jocs (nom, genere,descripcio, desarrollador, fecha, foto) VALUES ('".$nomJoc."' , '".$genere."', '".$desc."' ,'".$desarrollador."','".$fecha."' ,'".$foto."')") or die($miconexion->error());
+			$miconexion -> consulta("INSERT INTO jocs (nom, genere,descripcio, desarrollador, fecha, foto, video) VALUES ('".$nomJoc."' , '".$genere."', '".$desc."' ,'".$desarrollador."','".$fecha."' ,'".$foto."','".$video."')") or die($miconexion->error());
 			$miconexion -> tanca();
 		 }
 	};

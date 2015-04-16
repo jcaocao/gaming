@@ -1,4 +1,5 @@
-<?php require("includes/bd.php");
+<?php require("includes/sessio.php");
+	require("includes/bd.php");
 	require("includes/classeUsuari.php");
 	if(!isset($_GET["centre"]))
 {
@@ -50,10 +51,12 @@
 			<div class="row clearfix">
             	<div id="wrapper">
                 <?php include("includes/izquierdo.php"); ?>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">></a>
                     <div id="page-content-wrapper">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-12">
+                                
                                     <?php include("paginas/".$centre.".php"); ?>
                                 </div>
                             </div>

@@ -1,4 +1,6 @@
 <?php
+
+
 class BaseDeDades
 {
 var $BaseDeDades;

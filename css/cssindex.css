@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
-body{height:100%;}
+body{height:100%;
+font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
 html{height:100%;}
 .container{height:100%;
 width:100%;}
@@ -15,7 +16,7 @@ width:100%;}
 .medio{
 	padding:30px;
 	height:100vh;
-	background-color:#CC9;
+	background-color:#69F;
 	}
 	
 .derecho{
@@ -92,7 +93,7 @@ a:hover{color:#000000;}
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #464b50;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -133,7 +134,7 @@ a:hover{color:#000000;}
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #89949b;
 }
 
 .sidebar-nav li a:hover {
@@ -182,6 +183,7 @@ a:hover{color:#000000;}
     #page-content-wrapper {
         padding: 20px;
         position: relative;
+		background-color:#D8D8D8;
     }
 
     #wrapper.toggled #page-content-wrapper {
@@ -189,3 +191,18 @@ a:hover{color:#000000;}
         margin-right: 0;
     }
 }
+
+#menu-toggle
+{
+position: absolute;
+    height: 100%;
+    width: 10px;
+    z-index: 100;
+	padding-top:25%;
+    /*background: none;
+    border: none;
+    top: 50%;
+    margin-top: -10px;*/	}
+	
+.menuleft{
+	font-size:20px;}
