@@ -28,7 +28,8 @@ if(isset($_POST["login"]))
 				if(md5($pass)== $userPas["pass"])
 				{
 					sessionLogin($userPas["email"],  $userPas["authid"],  $userPas["estado"], $userPas["admin"]);
-					echo "Has logueado correctamente";
+					$actual_link = "index.php";
+					redireccionar($actual_link, "2000");
 					break;
 				}
 				

@@ -3,7 +3,7 @@
 					$conecta -> consulta("SELECT * FROM generes WHERE id='".$_GET["id"]."'");
 					$cat = $conecta -> fetch();
 						
-						echo '<div style="background-image:/banners/'.strtoupper($cat["nom"]).'.jpg"
+						echo '<div style=" height:150px; background-image:url(banners/'.strtoupper($cat["nom"]).'.jpg);"
 						<h2 class="tituloCat">'.strtoupper($cat["nom"]).'</h2><br>
 							   <div class="desc">'.$cat["descripcio"].'</div><br><br>
 							   </div>';

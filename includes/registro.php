@@ -1,6 +1,6 @@
 <?php
 
-
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 if(isset($_SESSION["email"]))
 {
 	echo '<div class="navbar-form ">Hola '.$_SESSION["email"].'<a href="includes/logout.php">(Sortir)</a></div>';
@@ -9,9 +9,19 @@ else
 {
 	if(empty($_GET["form"]))
 	{
- echo ' 
-	<li><a href="index.php?form=l">LOGIN</a></li>
-	<li><a href="index.php?form=r">REGISTRE</a></li>';
+		$urlfix = explode("?",$_SERVER["REQUEST_URI"]);
+		if(isset($urlfix["1"])){
+		 echo ' 
+	<li><a href="'.$actual_link.'&form=l">LOGIN</a></li>
+	<li><a href="'.$actual_link.'&form=r">REGISTRE</a></li>';
+		}
+		else
+		{
+			 echo ' 
+	<li><a href="'.$actual_link.'?form=l">LOGIN</a></li>
+	<li><a href="'.$actual_link.'?form=r">REGISTRE</a></li>';
+		}
+
 	}
 	elseif($_GET["form"] == "r")
 	{

@@ -67,7 +67,17 @@ class usuari{
                $tb = mysql_query($sql);
 	}
 	
+	
 }
+function redireccionar($url, $sleep)
+	{
+		
+		echo'<script>
+		setTimeout('.$sleep.');
+		window.location.replace("'.$url.'");
+		</script>';
+		
+		}
 
             /*}
 }

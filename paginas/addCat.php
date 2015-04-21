@@ -15,6 +15,12 @@ if(empty($_POST["addGen"])){
       <textarea class="form-control" id="descripcioGenere" name="descripcioGenere" rows="3"></textarea>
     </div>
   </div>
+   <div class="form-group">
+			<label for="foto" class="col-sm-2 control-label">Banner del Genero</label>
+			<div class="col-sm-9">
+			<input type="file" id="banner" name="banner">
+			  </div>
+		  </div>
   
  
   
@@ -30,11 +36,11 @@ else{
 	
 	$nomGenere = trim($_POST["nomGenere"]);
 	$descG = trim($_POST["descripcioGenere"]);
-	
+	$banner = $_POST["banner"];
 	
 	switch($nomGenere & $descG)
 	{
-		case 0: if(!isset($nomGenere)||!isset($descG))
+		case 0: if(!isset($nomGenere)||!isset($descG)||!isset($banner))
 		{
 			echo "Hi ha un camp que no has introduit <br>";
 			 break;
@@ -52,7 +58,7 @@ else{
 		
 		 case 2: {
 		 $miconexion = new BaseDeDades;
-			$miconexion -> consulta("INSERT INTO generes (nom, descripcio) VALUES ('".$nomGenere."' , '".$descG."')") or die($miconexion->error());
+			$miconexion -> consulta("INSERT INTO generes (nom, descripcio) VALUES ('".$nomGenere."' , '".$descG."','".$banner."')") or die($miconexion->error());
 			$miconexion -> tanca();
 		 }
 	};

@@ -13,9 +13,6 @@
 						</div>
 						</div>';
 						
-						
-						
-					
 					$conecta -> tanca(); 
 					
 					

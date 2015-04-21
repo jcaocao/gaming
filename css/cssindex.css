@@ -1,10 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
-body{height:100%;
+body{min-height:100%;
 font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+
 html{height:100%;}
 .container{height:100%;
 width:100%;}
+
 .menuFijo { 
 		left:0px; 
 		top:0px; 
@@ -65,13 +67,6 @@ a:hover{color:#000000;}
 	position: static;
 }
 
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-/* Toggle Styles */
 
 #wrapper {
     padding-left: 0;
@@ -107,7 +102,8 @@ a:hover{color:#000000;}
 #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
+    padding: 30px;
+	height:100%;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -181,7 +177,7 @@ a:hover{color:#000000;}
     }
 
     #page-content-wrapper {
-        padding: 20px;
+        padding: 30px;
         position: relative;
 		background-color:#D8D8D8;
     }
